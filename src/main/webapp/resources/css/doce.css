@@ -5,3 +5,65 @@
     width: 100%;
     height: 30em;
 }
+.img_produto_home{
+    max-width:100%;
+    width: 100%;
+}
+
+@media (max-width: 1210px) {
+
+	.img_carousel {
+	    max-width:100%;
+	    max-height:20em;
+	    width: 100%;
+	    height: 20em;
+	}
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: -100px;
+  width: 100%;
+  height: 80px;
+  line-height: 80px; /* Vertically center the text there */
+  background-color: #f5f5f5;
+}
+.footer p{	
+  margin-bottom:0px;
+}
+
+
+/* Album styles
+-------------------------------------------------- */
+.album {
+  min-height: 50rem; /* Can be removed; just added for demo purposes */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #f7f7f7;
+}
+
+.card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+.card > img {
+  margin-bottom: .75rem;
+}
+
+.card-text {
+  font-size: 85%;
+}
