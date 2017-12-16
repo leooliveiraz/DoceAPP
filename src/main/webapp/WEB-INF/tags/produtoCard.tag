@@ -9,8 +9,8 @@
 <div class="col-lg-4">
 	<a href="${link }">
 		<img class="img_produto_home"
-				src="data:image/gif;base64,<c:if test="${imagem.isEmpty() }">R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
-											<c:if test="${imagem != null }">${imagem }</c:if>"
+				src="<c:if test="${imagem.isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
+					<c:if test="${imagem != null }">${imagem }</c:if>"
 				alt="Produto" width="140" height="140">
 		<h2>${nome }</h2>
 		<p>${descricao }</p>

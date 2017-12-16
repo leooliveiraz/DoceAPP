@@ -53,11 +53,20 @@
 					</div>
 				</div>
 				<div class="form-group row">
-					<label for="valor_desconto" class="col-sm-2 col-form-label">
+					<label for="imagem" class="col-sm-2 col-form-label">
 						Imagem:
 					</label>
-					<div class="col-sm-10">						
-						<input name="imagem_principal" type="file" class="form-control">
+					<div class="col-sm-10">		
+						<div id="image-holder">
+							<img class="img_produto_cadastro" 
+								src="
+									<c:if test="${produto.imagem.isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
+									<c:if test="${produto.imagem != null }">${produto.imagem }</c:if>"
+								alt="Produto" width="140" height="140">
+							<input type="hidden" id="imagem" name="imagem"	value="${produto.imagem }" />
+						</div>								
+					    
+						<input id="imagem_principal" name="imagem_principal" type="file" class="form-control"></input>
 					</div>
 				</div>
 				

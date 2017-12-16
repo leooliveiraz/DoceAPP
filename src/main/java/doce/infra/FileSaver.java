@@ -26,7 +26,7 @@ public class FileSaver {
 			file.transferTo(new File(path));
 
 			return baseFolder + "/" + file.getOriginalFilename();
-		} catch (IllegalStateException | IOException e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 	}

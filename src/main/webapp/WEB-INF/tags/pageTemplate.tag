@@ -14,6 +14,7 @@
 <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapjs" />
 <spring:url value="/resources/js/jquery-3.2.1.slim.min.js" var="jquery" />
 <spring:url value="/resources/js/popper.min.js" var="popper" />
+<spring:url value="/resources/js/doce.js" var="docejs" />
 <title>${titulo }</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -36,7 +37,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarColor01">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item "><a class="nav-link" href="#">Cardápio
+					<li class="nav-item "><a class="nav-link" href="/cardapio/">Cardápio
 							<span class="sr-only">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="/produtos/lista">Meus Produtos
@@ -57,8 +58,13 @@
 		<div class=" navbar-dark bg-dark">
 
 			<div class="container">
-				<p>© 2017 Buquê de Coxinha</p>
-			</div>
+				<p>© 2017 Buquê de Coxinha
+				<span class="float-right"> 
+			      <a href="https://www.facebook.com/leorochaz">Desenvolvido por Leonardo Rocha</a> 
+			    </span> 
+			    </p>
+			</div>			
+		    
 		</div>
 
 	</footer>
@@ -71,6 +77,8 @@
 		src="${popper}" ></script>
 	<script
 		src="${bootstrapjs}"></script>
+	<script
+		src="${docejs}"></script>
 </body>
 </html>
 
