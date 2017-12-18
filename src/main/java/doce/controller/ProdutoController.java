@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import doce.models.Produto;
 import doce.service.ProdutoService;
@@ -41,17 +42,19 @@ public class ProdutoController {
 		return mv;
 	}
 	@RequestMapping("/salvar")
-	public ModelAndView salvar(Produto produto) throws IOException {
+	public ModelAndView salvar(Produto produto,RedirectAttributes redirectAttributes)  throws IOException {
 		ModelAndView mv = new ModelAndView("redirect:/produtos/lista");				
 		produtoService.salvar(produto);
+    	redirectAttributes.addFlashAttribute("sucesso", "Produto adicionado com sucesso.");
 		return mv;
 	}
 
 	@RequestMapping(value="/alterar",method=RequestMethod.POST)
-	public ModelAndView alterar(Produto produto) throws IOException {
+	public ModelAndView alterar(Produto produto,RedirectAttributes redirectAttributes) throws IOException {
 		ModelAndView mv = new ModelAndView("redirect:/produtos/lista");			
 		System.out.println(produto.getImagem());
 		produtoService.salvar(produto);
+    	redirectAttributes.addFlashAttribute("sucesso", "Produto alterado com sucesso.");
 		return mv;
 	}
 	

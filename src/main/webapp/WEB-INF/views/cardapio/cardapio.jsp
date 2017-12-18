@@ -7,6 +7,9 @@
 	<br>
 	<div class="container">
 		<br>
+		
+		<tags:msgSucesso sucesso="${sucesso }" />
+		<tags:msgSucesso sucesso="${erro }" />
 		<div class="row">
 			
 			<c:forEach items="${produtos }" var="produto">

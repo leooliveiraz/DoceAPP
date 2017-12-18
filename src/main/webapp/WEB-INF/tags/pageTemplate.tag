@@ -40,10 +40,32 @@
 					<li class="nav-item "><a class="nav-link" href="/cardapio/">Cardápio
 							<span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link" href="/produtos/lista">Meus Produtos
-							<span class="sr-only">(current)</span>
+					<li class="nav-item"><a class="nav-link"
+						href="/produtos/lista">Meus Produtos <span class="sr-only">(current)</span>
 					</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/compras/pedidos">Pedidos <span class="sr-only">(current)</span>
+					</a></li>
+					
+					<li class="nav-item printaCEL">
+						<a class="nav-link"
+								href="/carrinho/">
+								<strong>Meu Carrinho (${carrinhoCompras.quantidade})</strong>
+								<span class="sr-only">(current)</span>
+							</a></li>
+
 				</ul>
+				<span class="printaPC float-right">
+					<div class="collapse navbar-collapse" id="navbarColor01">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item"><a class="nav-link"
+								href="/carrinho/">
+								<strong>Meu Carrinho (${carrinhoCompras.quantidade})</strong>
+								<span class="sr-only">(current)</span>
+							</a></li>
+						</ul>
+					</div>
+				</span>
 			</div>
 		</nav>
 
@@ -57,28 +79,25 @@
 
 		<div class=" navbar-dark bg-dark">
 
-			<div class="container">
-				<p>© 2017 Buquê de Coxinha
-				<span class="float-right"> 
-			      <a href="https://www.facebook.com/leorochaz">Desenvolvido por Leonardo Rocha</a> 
-			    </span> 
-			    </p>
-			</div>			
-		    
+			<div class="container bg-dark">
+				<p>
+					© 2017 Buquê de Coxinha <span class="float-right"> <a
+						href="https://www.facebook.com/leorochaz">Desenvolvido por
+							Leonardo Rocha</a>
+					</span>
+				</p>
+			</div>
+
 		</div>
 
 	</footer>
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script
-		src="${jquery}"></script>
-	<script
-		src="${popper}" ></script>
-	<script
-		src="${bootstrapjs}"></script>
-	<script
-		src="${docejs}"></script>
+	<script src="${jquery}"></script>
+	<script src="${popper}"></script>
+	<script src="${bootstrapjs}"></script>
+	<script src="${docejs}"></script>
 </body>
 </html>
 

@@ -85,7 +85,7 @@
 				
 				<br>
 				<br>
-				<button type="submit" class="btn btn-primary btn-lg btn-block" >Salvar</button>
+				<button type="submit" class="btn btn-success btn-lg btn-block" >Salvar</button>
 			</form:form>
 		</div>
 	</div>

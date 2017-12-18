@@ -6,6 +6,11 @@
 <tags:pageTemplate titulo="Doce App - Gerênciamento de Produtos">
 	<br>
 	<div class="container">
+	
+		
+		<tags:msgSucesso sucesso="${sucesso }" />
+		<tags:msgSucesso sucesso="${erro }" />
+		
 		<a class="btn btn-success btn-lg btn-block" href="/produtos/novo">Cadastrar um novo produto</a>
 		<br>
 		<div class="row">

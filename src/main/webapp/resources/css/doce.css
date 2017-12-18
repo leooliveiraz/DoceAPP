@@ -22,6 +22,21 @@
    	border-radius: 5px;
 }
 
+.img_produto_tabela{
+    min-height: 7em;
+   	max-height: 7em;
+    min-width: 100%;
+   	max-width: 100%;
+   	border-radius: 5px;
+}
+
+.printaPC{	
+	display: inline;
+}
+.printaCEL{
+	display: none;
+}
+
 @media (max-width: 1210px) {
 
 	.img_carousel {
@@ -36,6 +51,30 @@
     	height: 15em;
     	border-radius: 5px;
 	}
+			
+		
+	.img_produto_cadastro{
+	    max-width:100%;
+	    width: 100%;
+    	height: 15em;
+    	max-height:15em;
+    	min-height:10em;
+	   	border-radius: 5px;
+	}	
+		
+	.printaPC{
+		display: none;
+	}	
+	.printaCEL{
+		display: inline;
+	}
+	
+	.img_produto_tabela{
+	    min-width: 100%;
+	   	max-width: 100%;
+	   	border-radius: 5px;
+	}
+	
 }
 
 /* Sticky footer styles

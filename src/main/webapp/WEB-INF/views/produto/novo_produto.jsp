@@ -67,6 +67,7 @@
 						</div>								
 					    
 						<input id="imagem_principal" name="imagem_principal" type="file" class="form-control"></input>
+						
 					</div>
 				</div>
 				
