@@ -59,11 +59,4 @@ public class ProdutoController {
 	}
 	
 
-	@RequestMapping("/detalhes/{id}")
-	public ModelAndView alterar(@PathVariable("id") Long id)  {
-		ModelAndView mv = new ModelAndView("/produto/detalhes_produto");
-		Produto produto = produtoService.encontrar(id);
-		mv.addObject("produto", produto);
-		return mv;
-	}
 }

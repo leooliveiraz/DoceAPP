@@ -24,6 +24,13 @@ public class ProdutoService {
 		lista.forEach(produto -> produtos.add(produto));
 		return  produtos;
 	}
+	public List<Produto> listarNome(String nome) {
+		nome="%"+nome+"%";
+		Iterable<Produto> lista =produtoRepository.findByNomeContaining(nome);
+		List<Produto> produtos = new ArrayList<Produto>();
+		lista.forEach(produto -> produtos.add(produto));
+		return  produtos;
+	}
 	
 	public Produto encontrar(Long id) {
 		return produtoRepository.findOne(id);

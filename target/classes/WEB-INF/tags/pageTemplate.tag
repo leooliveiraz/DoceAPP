@@ -5,6 +5,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
 <!doctype html>
 <html lang="pt_BR">
@@ -40,12 +41,26 @@
 					<li class="nav-item "><a class="nav-link" href="/cardapio/">Cardápio
 							<span class="sr-only">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/produtos/lista">Meus Produtos <span class="sr-only">(current)</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="/compras/pedidos">Pedidos <span class="sr-only">(current)</span>
-					</a></li>
+					<sec:authorize access="isAuthenticated()">
+						<li class="nav-item"><a class="nav-link"
+							href="/produtos/lista">Meus Produtos <span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="/compras/pedidos">Pedidos <span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="/noticias/">Notícias <span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="/usuarios/lista">Usuários <span class="sr-only">(current)</span>
+						</a></li>
+					</sec:authorize>
+					
+					<sec:authorize access="!isAuthenticated()">
+						<li class="nav-item"><a class="nav-link"
+							href="/produtos/lista">Administração <span class="sr-only">(current)</span>
+						</a></li>
+					</sec:authorize>
 					
 					<li class="nav-item printaCEL">
 						<a class="nav-link"
@@ -53,6 +68,15 @@
 								<strong>Meu Carrinho (${carrinhoCompras.quantidade})</strong>
 								<span class="sr-only">(current)</span>
 							</a></li>
+					<li class="nav-item printaCEL">
+						<sec:authorize access="isAuthenticated()">
+							<a class="nav-link"
+									href="/logout">
+									<strong>Sair</strong>
+									<span class="sr-only">(current)</span>
+								</a>
+						</sec:authorize>
+					</li>
 
 				</ul>
 				<span class="printaPC float-right">
@@ -63,6 +87,13 @@
 								<strong>Meu Carrinho (${carrinhoCompras.quantidade})</strong>
 								<span class="sr-only">(current)</span>
 							</a></li>
+							<sec:authorize access="isAuthenticated()">
+								<li class="nav-item"><a class="nav-link"
+									href="/logout">
+									<strong>Sair </strong>
+									<span class="sr-only">(current)</span>
+								</a></li>
+							</sec:authorize>
 						</ul>
 					</div>
 				</span>

@@ -4,58 +4,72 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <tags:pageTemplate titulo="Doce App">
-	<div class="album">
-		<div id="demo" class="container carousel slide" data-ride="carousel">
-	
-			<!-- Indicators -->
-			<ul class="carousel-indicators">
-				<li data-target="#demo" data-slide-to="0" class="active"></li>
-				<li data-target="#demo" data-slide-to="1"></li>
-				<li data-target="#demo" data-slide-to="2"></li>
-			</ul>
-	
-			<!-- The slideshow -->
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img class="img_carousel"
-						src="https://img.stpu.com.br/?img=https://s3.amazonaws.com/pu-mgr/default/a0RG000000jYz8kMAC/5a1c68bee4b0b11dc316d6a6.jpg&w=620&h=400"
-						alt="Los Angeles">
+	<c:if test="${!noticias.isEmpty() }">
+		<div class="album">
+			<div id="demo" class="container carousel slide" data-ride="carousel">
+
+				<!-- Indicators -->
+				<ul class="carousel-indicators">
+					<c:forEach items="#{noticias }" var="noticias" varStatus="s">
+						<c:if test="${s.count ==1 }">
+							<li data-target="#demo" data-slide-to="${s.count-1 }"
+								class="active"></li>
+						</c:if>
+						<c:if test="${s.count >1 }">
+							<li data-target="#demo" data-slide-to="${s.count }"></li>
+						</c:if>
+					</c:forEach>
+				</ul>
+
+				<!-- The slideshow -->
+				<div class="carousel-inner">
+					<c:forEach items="#{noticias }" var="noticia" varStatus="s">
+						<c:if test="${s.count ==1 }">
+							<div class="carousel-item active">
+						</c:if>
+						<c:if test="${s.count >1 }">
+							<div class="carousel-item ">
+						</c:if>
+						<a href="${noticia.link }">
+							<img class="d-block w-100 img_carousel" src="<c:if test="${noticia.imagem.isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
+								<c:if test="${noticia.imagem != null }">${noticia.imagem }</c:if>"
+								alt="Second slide">
+						</a>
+						<a href="${noticia.link }">
+							<div class="carousel-caption d-none d-md-block">
+								<h1>${noticia.titulo }</h1>
+								<h4>${noticia.descricao }</h4>
+							</div>
+						</a>
+						
 				</div>
-				<div class="carousel-item">
-					<img class="img_carousel"
-						src="https://img.elo7.com.br/product/original/1B66FFE/panetone-trufados-panetonetrufado-chocotonetrufado-panetone-chocotone-natal-chocolate-presente-delic.jpg"
-						alt="Los Angeles">
-				</div>
-				<div class="carousel-item">
-					<img class="img_carousel"
-						src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbScegp5XGC02ZoStNz41Hrf6nA3wFO3xZp1oIokK5XzvohIjv"
-						alt="Los Angeles">
-				</div>
+				</c:forEach>
+
 			</div>
-	
+
 			<!-- Left and right controls -->
-			<a class="carousel-control-prev" href="#demo" data-slide="prev"> <span
-				class="carousel-control-prev-icon"></span>
+			<a class="carousel-control-prev" href="#demo" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
 			</a> <a class="carousel-control-next" href="#demo" data-slide="next">
 				<span class="carousel-control-next-icon"></span>
 			</a>
-	
+
 		</div>
-	</div>
-	
+		</div>
+	</c:if>
+
 	<br>
 	<br>
-	
+
 	<div class="container">
 		<div class="row">
-			
+
 			<c:forEach items="${produtos }" var="produto">
-				<tags:produtoCard descricao="${produto.descricao }" 
-					nome="${produto.nome }" 
-					link="/produtos/detalhes/${produto.id }" 
+				<tags:produtoCard descricao="${produto.descricao }"
+					nome="${produto.nome }" link="/cardapio/detalhes/${produto.id }"
 					imagem="${produto.imagem }"></tags:produtoCard>
 			</c:forEach>
-			
+
 		</div>
 	</div>
 </tags:pageTemplate>
