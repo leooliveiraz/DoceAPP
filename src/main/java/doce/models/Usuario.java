@@ -112,6 +112,18 @@ public class Usuario implements UserDetails {
 		return "Usuario [email=" + email + ", senha=" + senha + ", cpf=" + cpf + ", nome=" + nome + "]";
 	}
 
+	public Usuario(String email, String senha, String cpf, String nome) {
+		super();
+		this.email = email;
+		this.senha = senha;
+		this.cpf = cpf;
+		this.nome = nome;
+	}
+
+	public Usuario() {
+		super();
+	}
+
 	
 	
 }

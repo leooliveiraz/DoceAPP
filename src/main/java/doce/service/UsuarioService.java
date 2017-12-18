@@ -28,7 +28,9 @@ public class UsuarioService {
 	
 	public void alterar(Usuario usuario) {
 		Usuario usuarioValidacao = encontrar(usuario.getEmail());
-		if(!usuario.getEmail().equals(usuarioValidacao.getEmail())) {
+		System.out.println(usuario.getSenha()+"===="+usuarioValidacao.getSenha()+" a "+(usuario.getEmail().equals(usuarioValidacao.getEmail())));
+		if(!usuario.getSenha().equals(usuarioValidacao.getSenha())) {
+			System.out.println("diferente");
 			usuario.setSenha(new BCryptPasswordEncoder().encode(usuario.getSenha()));
 		}
 		usuarioRepository.save(usuario);
@@ -47,12 +49,17 @@ public class UsuarioService {
 	
 
 	public Boolean verificaExistencia(Usuario usuario) {
-		Usuario usuarioExiste = usuarioRepository.findByEmail(usuario.getEmail()).get(0);
-		if(usuarioExiste !=null)
-			if(usuarioExiste.getEmail()!=null)
-				if(!usuarioExiste.getEmail().isEmpty())
-					return Boolean.TRUE;
-		return Boolean.FALSE;
+		try {
+			
+			Usuario usuarioExiste = usuarioRepository.findByEmail(usuario.getEmail()).get(0);
+			if(usuarioExiste !=null)
+				if(usuarioExiste.getEmail()!=null)
+					if(!usuarioExiste.getEmail().isEmpty())
+						return Boolean.TRUE;
+			return Boolean.FALSE;
+		} catch (Exception e) {
+			return Boolean.FALSE;
+		}
 		
 	}
 }

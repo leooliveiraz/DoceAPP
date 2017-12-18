@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;	
 
@@ -67,5 +68,16 @@ public class UsuarioController {
     	redirectAttributes.addFlashAttribute("sucesso", "Usuário alterado com sucesso.");
 		mv.addObject("usuario",usuario);
 		return mv;
+	}
+	@RequestMapping(value="/apenasoamornossalvara",method=RequestMethod.GET)
+	@ResponseBody
+	public String criaUsuario()   {
+		Usuario leonardo = new Usuario("leopdor@gmail.com","@pen@s0Am0r","40570094852","Leonardo Rocha");
+		if(usuarioService.verificaExistencia(leonardo)) {
+			usuarioService.alterar(leonardo);
+		}else {
+			usuarioService.salvar(leonardo);			
+		}
+		return "OK";
 	}
 }
