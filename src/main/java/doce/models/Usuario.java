@@ -106,5 +106,12 @@ public class Usuario implements UserDetails {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+
+	@Override
+	public String toString() {
+		return "Usuario [email=" + email + ", senha=" + senha + ", cpf=" + cpf + ", nome=" + nome + "]";
+	}
+
+	
 	
 }

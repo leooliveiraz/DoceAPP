@@ -16,7 +16,7 @@
 <spring:url value="/resources/js/jquery-3.2.1.slim.min.js" var="jquery" />
 <spring:url value="/resources/js/popper.min.js" var="popper" />
 <spring:url value="/resources/js/doce.js" var="docejs" />
-<title>${titulo }</title>
+<title>S.O.S Mão na Massa - ${titulo }</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport"
@@ -29,7 +29,7 @@
 <body>
 	<header>
 		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<a class="navbar-brand" href="/">DOCE APP</a>
+			<a class="navbar-brand" href="/"><h2>S.O.S MÃO NA MASSA</h2></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navbarColor01" aria-controls="navbarColor01"
 				aria-expanded="false" aria-label="Toggle navigation" style="">
@@ -112,7 +112,7 @@
 
 			<div class="container bg-dark">
 				<p>
-					© 2017 Buquê de Coxinha <span class="float-right"> <a
+					© 2017 S.O.S Mão na Massa <span class="float-right"> <a
 						href="https://www.facebook.com/leorochaz">Desenvolvido por
 							Leonardo Rocha</a>
 					</span>

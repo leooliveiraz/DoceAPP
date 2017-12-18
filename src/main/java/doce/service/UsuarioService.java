@@ -27,6 +27,10 @@ public class UsuarioService {
 	}
 	
 	public void alterar(Usuario usuario) {
+		Usuario usuarioValidacao = encontrar(usuario.getEmail());
+		if(!usuario.getEmail().equals(usuarioValidacao.getEmail())) {
+			usuario.setSenha(new BCryptPasswordEncoder().encode(usuario.getSenha()));
+		}
 		usuarioRepository.save(usuario);
 	}
 	public List<Usuario> listar() {

@@ -11,7 +11,7 @@
 		<hr>
 		
 		<tags:msgSucesso sucesso="${sucesso }" />
-		<tags:msgSucesso sucesso="${erro }" />
+		<tags:msgErro erro="${erro }" />
 
 		
 		<c:if test="${compras.isEmpty() }">

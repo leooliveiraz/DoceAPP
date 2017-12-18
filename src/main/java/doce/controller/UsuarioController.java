@@ -45,15 +45,26 @@ public class UsuarioController {
 	    	redirectAttributes.addFlashAttribute("erro", "Já existe usuário com esse email.");
 		}
 		usuarioService.salvar(usuario);
-    	redirectAttributes.addFlashAttribute("sucesso", "Usuário adicionada com sucesso.");
+    	redirectAttributes.addFlashAttribute("sucesso", "Usuário alterado com sucesso.");
 		return mv;
 	}
 	
 
 	@RequestMapping("/alterar/{cpf}")
 	public ModelAndView detalhe(@PathVariable String cpf) {
-		ModelAndView mv = new ModelAndView("usuario/novo_usuario");
+		ModelAndView mv = new ModelAndView("usuario/alterar_usuario");
 		Usuario usuario = usuarioService.encontrarCPF(cpf);
+		mv.addObject("usuario",usuario);
+		return mv;
+	}
+	
+
+	@RequestMapping(value="/alterar",method=RequestMethod.POST)
+	public ModelAndView alterar(Usuario usuario,String senha_validacao,RedirectAttributes redirectAttributes)  throws IOException {
+		ModelAndView mv = new  ModelAndView("redirect:/usuarios/lista");		
+		System.out.println(usuario.toString());
+		usuarioService.alterar(usuario);
+    	redirectAttributes.addFlashAttribute("sucesso", "Usuário alterado com sucesso.");
 		mv.addObject("usuario",usuario);
 		return mv;
 	}

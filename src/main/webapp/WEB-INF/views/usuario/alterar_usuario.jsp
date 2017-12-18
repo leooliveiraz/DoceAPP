@@ -14,14 +14,13 @@
 		
 		<tags:msgSucesso sucesso="${sucesso }" />
 		<tags:msgErro erro="${erro }" />
-			${usuario.nome }
 			<form:form action="/usuarios/alterar" method="post"  >
 				<div class="form-group row">
 					<label for="nome" class="col-sm-2 col-form-label">
 						Nome:
 					</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="nome" name="nome" value="${usuario.nome }">
+						<input type="text" class="form-control" id="nome" name="nome" value="${usuario.nome }"
 							placeholder="Nome do usuário">
 					</div>
 				</div>
@@ -30,7 +29,8 @@
 						CPF:
 					</label>
 					<div class="col-sm-10">
-						<input type="text" class="form-control" id="cpf" name="cpf"
+						<input type="hidden" value="${usuario.cpf }" id="cpf" name="cpf" />
+						<input type="text" disabled class="form-control"  value="${usuario.cpf }"
 							placeholder="CPF do usuário">
 					</div>
 				</div>
@@ -40,8 +40,8 @@
 						Email:
 					</label>
 					<div class="col-sm-10">
-						<input  type="email" class="form-control" id="emailusuario"  name="emailusuario" disabled placeholder="Informe o email do usuário">
-						<input  type="hidden"value="${usuario.nome }"  class="form-control" id="email"  disabled  >
+						<input  type="email" value="${usuario.email }" class="form-control" id="emailusuario"  name="emailusuario" disabled placeholder="Informe o email do usuário">
+						<input  type="hidden" value="${usuario.email }"  class="form-control" id="email" name="email"    >
 					</div>
 				</div>
 				
