@@ -3,7 +3,7 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<tags:pageTemplate titulo="Doce App">
+<tags:pageTemplate titulo="Página Inicial">
 	<c:if test="${!noticias.isEmpty() }">
 		<div class="album">
 			<div id="demo" class="container carousel slide" data-ride="carousel">

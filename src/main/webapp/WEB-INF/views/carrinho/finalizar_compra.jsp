@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<tags:pageTemplate titulo="Doce App - Carrinho de Compras">
+<tags:pageTemplate titulo="Finalizar Compra">
 	<br>
 	<br>
 	<div class="container">

@@ -3,7 +3,7 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<tags:pageTemplate titulo="Cadastro de Notícias">
+<tags:pageTemplate titulo="Gerênciamento de usuários">
 	<br><br>
 	<div class="container">
 		<h1>Usuários</h1>		

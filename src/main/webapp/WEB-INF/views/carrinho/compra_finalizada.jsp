@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-<tags:pageTemplate titulo="Doce App - Compra Finalizada!">
+<tags:pageTemplate titulo="Compra Finalizada!">
 	<br><br>
 	<div class="container">
 		<h1>Sua compra foi finalizada com sucesso</h1>

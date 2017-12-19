@@ -3,7 +3,7 @@
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<tags:pageTemplate titulo="Doce App - Carrinho de Compras">
+<tags:pageTemplate titulo="Carrinho de Compras">
 	<br>
 	<br>
 	<div class="container">
