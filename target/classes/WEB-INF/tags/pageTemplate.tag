@@ -103,6 +103,12 @@
 		</nav>
 
 	</header>
+		<div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-bottom: 0px">
+		  <strong>Atenção Cliente!</strong> Estamos atendendo apenas pedidos de Jacareí e alguns bairros de São José dos Campos.
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
 	<jsp:doBody />  
 
 	<!-- FOOTER -->
