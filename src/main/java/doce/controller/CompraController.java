@@ -30,6 +30,9 @@ public class CompraController {
 		List<Compra> compras = compraService.listar();
 		mv.addObject("compras", compras);
 		mv.addObject("status", StatusCompra.values());
+		mv.addObject("totalCancelado", getValorTotal(compras, StatusCompra.CANCELADO));
+		mv.addObject("totalFinalizado", getValorTotal(compras, StatusCompra.FINALIZADO));
+		mv.addObject("totalAberto", getValorTotal(compras, StatusCompra.ABERTO));
 		return mv;		
 	}
 
@@ -42,6 +45,9 @@ public class CompraController {
 		mv.addObject("dataFinal", dataFinal);
 		mv.addObject("dataInicial", dataInicial);
 		mv.addObject("statusEscolhido", status);
+		mv.addObject("totalCancelado", getValorTotal(compras, StatusCompra.CANCELADO));
+		mv.addObject("totalFinalizado", getValorTotal(compras, StatusCompra.FINALIZADO));
+		mv.addObject("totalAberto", getValorTotal(compras, StatusCompra.ABERTO));
 		return mv;		
 	}
 
@@ -66,4 +72,12 @@ public class CompraController {
     	
 		return mv;
 	}
+    
+    public Double getValorTotal(List<Compra> compras ,StatusCompra status) {
+    	Double valor = 0.0;
+    	if(!compras.isEmpty())
+			valor = compras.stream().filter(c -> c.getStatus() == status).mapToDouble(c -> c.getValor_total()).sum();    		
+    	System.out.println(valor);
+    	return valor;
+    }
 }

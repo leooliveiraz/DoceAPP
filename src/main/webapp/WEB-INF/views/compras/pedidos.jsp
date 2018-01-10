@@ -121,5 +121,14 @@
 				<hr>
 			</a>
 		</c:forEach>
+		<c:if test="${totalCancelado >0.0 }">
+			<p><strong>Total Cancelado:R$ ${totalCancelado }</strong></p>
+		</c:if> 
+		<c:if test="${totalAberto >0.0 }">
+			<p><strong>Total Aberto:R$ ${totalAberto }</strong></p>
+		</c:if> 
+		<c:if test="${totalFinalizado >0.0 }">
+			<p><strong>Total Finalizado:R$ ${totalFinalizado }</strong></p>
+		</c:if> 
 	</div>
 </tags:pageTemplate>
