@@ -36,12 +36,12 @@ public class CompraController {
 	@RequestMapping("/pedidos/pesquisa")
 	public ModelAndView pedidosPesquisa(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd")Date dataInicial,@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal,@RequestParam String status) {
 		ModelAndView mv = new ModelAndView("/compras/pedidos");
-		System.out.println(dataInicial);
-		System.out.println(dataFinal);
-		System.out.println(status);
 		List<Compra> compras = compraService.filtrar(dataInicial, dataFinal, status);
 		mv.addObject("compras", compras);
 		mv.addObject("status", StatusCompra.values());
+		mv.addObject("dataFinal", dataFinal);
+		mv.addObject("dataInicial", dataInicial);
+		mv.addObject("statusEscolhido", status);
 		return mv;		
 	}
 

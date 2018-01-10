@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ taglib tagdir="/WEB-INF/tags" prefix="tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <tags:pageTemplate titulo="Pedidos">
@@ -19,8 +20,8 @@
 				<div class="col-sm-2">
 					<input type="date" class="form-control"
 						id="data_inicial_filtro"  
-						name="dataInicial"
-						required value="" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"
+						name="dataInicial" 
+						required value="${dataInicial }" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"
 						placeholder="Data Inicial">
 				</div>
 				
@@ -29,7 +30,7 @@
 				</label>
 				<div class="col-sm-2">
 					<input type="date" class="form-control" id="data_final_filtro" name="dataFinal" 
-						required value=""
+						required value="${dataFinal }" 
 						placeholder="Data Final">
 				</div>
 				
@@ -83,6 +84,9 @@
 				<div class="col-sm-1" >
 					<h4>Status</h4>
 				</div>
+				<div class="col-sm-1" >
+					<h4>Data</h4>
+				</div>
 			</div>
 		</div>
 		<br>
@@ -106,6 +110,12 @@
 					</div>
 					<div class="col-sm-1" >
 						<span class="printaCEL">Status:</span> <strong>${compra.status }</strong>
+					</div>
+					<div class="col-sm-1" >
+						<span class="printaCEL">Data:</span> 
+						<strong>
+   							<fmt:formatDate pattern="dd/MM/yyyy" value="${compra.dataCompra }" />
+						</strong>
 					</div>
 				</div>
 				<hr>
