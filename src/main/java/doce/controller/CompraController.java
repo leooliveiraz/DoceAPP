@@ -1,13 +1,16 @@
 package doce.controller;
 
 import java.net.MalformedURLException;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -26,8 +29,20 @@ public class CompraController {
 		ModelAndView mv = new ModelAndView("/compras/pedidos");
 		List<Compra> compras = compraService.listar();
 		mv.addObject("compras", compras);
-		return mv;
-		
+		mv.addObject("status", StatusCompra.values());
+		return mv;		
+	}
+
+	@RequestMapping("/pedidos/pesquisa")
+	public ModelAndView pedidosPesquisa(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd")Date dataInicial,@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") Date dataFinal,@RequestParam String status) {
+		ModelAndView mv = new ModelAndView("/compras/pedidos");
+		System.out.println(dataInicial);
+		System.out.println(dataFinal);
+		System.out.println(status);
+		List<Compra> compras = compraService.filtrar(dataInicial, dataFinal, status);
+		mv.addObject("compras", compras);
+		mv.addObject("status", StatusCompra.values());
+		return mv;		
 	}
 
 	@RequestMapping("/pedidos/{id}")

@@ -9,6 +9,51 @@
 	<div class="container">
 		<h1>Pedidos Solicitados</h1>		
 		<hr>
+		<h2>Filtros:</h2>
+		
+		<form action="/compras/pedidos/pesquisa/" method="get" >	
+			<div class="form-group row">
+				<label for="data_inicial_filtro" class="col-sm-2 col-form-label">
+					Data Inicial:
+				</label>
+				<div class="col-sm-2">
+					<input type="date" class="form-control"
+						id="data_inicial_filtro"  
+						name="dataInicial"
+						required value="" pattern="(0[1-9]|1[0-9]|2[0-9]|3[01])/(0[1-9]|1[012])/[0-9]{4}"
+						placeholder="Data Inicial">
+				</div>
+				
+				<label for="data_final_filtro" class="col-sm-2 col-form-label">
+					Data Final:
+				</label>
+				<div class="col-sm-2">
+					<input type="date" class="form-control" id="data_final_filtro" name="dataFinal" 
+						required value=""
+						placeholder="Data Final">
+				</div>
+				
+				<label for="status_filtro" class="col-sm-1 col-form-label">
+					Status:
+				</label>
+				<div class="col-sm-2">
+					
+					<select class="form-control" id="status_filtro" name="status">
+						<option>TODOS</option>
+						<c:forEach items="${status }" var="s" >
+					        <option>${s }</option>
+						</c:forEach>
+			      	</select>
+				</div>
+				
+				<div class="col-sm-1">
+					<button type="submit" class="btn btn-success btn-lg" >
+						<i class="fas fa-search"></i>
+					</button>
+				</div>
+			</div>
+		</form>
+		<hr>
 		
 		<tags:msgSucesso sucesso="${sucesso }" />
 		<tags:msgErro erro="${erro }" />

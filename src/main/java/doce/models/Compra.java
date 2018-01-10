@@ -1,5 +1,6 @@
 package doce.models;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -8,6 +9,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +27,8 @@ public class Compra {
 	private String email;
 	private Double valor_total;
 	private StatusCompra status= StatusCompra.ABERTO;
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+	private Date dataCompra = new Date();
 	
 
     @OneToMany(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
