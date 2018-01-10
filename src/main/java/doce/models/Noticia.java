@@ -36,8 +36,5 @@ public class Noticia {
 	public String toString() {
 		return "Noticia [id=" + id + ", imagem=" + imagem + ", link=" + link + ", titulo=" + titulo + ", descricao="
 				+ descricao + "]";
-	}
-	
-	
-	
+	}	
 }

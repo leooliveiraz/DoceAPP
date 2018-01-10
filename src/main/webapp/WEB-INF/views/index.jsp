@@ -65,7 +65,7 @@
 		<div class="row">
 
 			<c:forEach items="${produtos }" var="produto">
-				<tags:produtoCard descricao="${produto.descricao }"
+				<tags:produtoCard descricao="${produto.descricao }" nomeUrl="${produto.nomeUrl}"
 					nome="${produto.nome }" link="/cardapio/detalhes/${produto.id }"
 					imagem="${produto.imagem }"></tags:produtoCard>
 			</c:forEach>

@@ -17,7 +17,7 @@
 			
 			<c:forEach items="${produtos }" var="produto">
 				<tags:produtoCard descricao="${produto.descricao }" 
-					nome="${produto.nome }" 
+					nome="${produto.nome }"  nomeUrl="${produto.nomeUrl }"
 					link="/produtos/alterar/${produto.id }" 
 					imagem="${produto.imagem }">
 				</tags:produtoCard>

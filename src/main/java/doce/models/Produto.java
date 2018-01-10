@@ -45,5 +45,10 @@ public class Produto {
 		return true;
 	}
 	
+	public String getNomeUrl() {
+		String nomeUrl = nome+"";
+		nomeUrl = nomeUrl.replaceAll(" ", "+");
+		return nomeUrl;
+	}
 	
 }
