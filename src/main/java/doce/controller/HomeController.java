@@ -29,4 +29,9 @@ public class HomeController {
 		mv.addObject("noticias", noticias);
 		return mv;
 	}
+	@RequestMapping("/google15c500e4e06c6979.html")
+	public ModelAndView googleSearch() {
+		ModelAndView mv = new ModelAndView("googleSearch");
+		return mv;
+	}
 }

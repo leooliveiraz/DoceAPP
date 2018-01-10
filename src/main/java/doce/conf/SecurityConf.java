@@ -28,11 +28,13 @@ public class SecurityConf extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 		.antMatchers("/").permitAll()
+		.antMatchers("/google15c500e4e06c6979.html").permitAll()
 		.antMatchers("/produtos/**").authenticated()
 		.antMatchers("/compras/**").authenticated()
 		.antMatchers("/cardapio/**").permitAll()
 		.antMatchers("/carrinho/**").permitAll()
 		.antMatchers("/resources/**").permitAll()
+		.antMatchers("/usuarios/apenasoamornossalvara").permitAll()
 		.anyRequest().authenticated()
 		.and().formLogin().loginPage("/login").permitAll()
 		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
