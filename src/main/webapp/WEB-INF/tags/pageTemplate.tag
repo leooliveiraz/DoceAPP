@@ -11,12 +11,15 @@
 <html lang="pt_BR">
 <head>
 <spring:url value="/resources/css/bootstrap.min.css" var="bootstrap" />
+<spring:url value="/resources/css/loading-spin.svg" var="loading-spin" />
 <spring:url value="/resources/css/doce.css" var="docecss" />
 <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapjs" />
 <spring:url value="/resources/js/jquery-3.2.1.slim.min.js" var="jquery" />
 <spring:url value="/resources/js/popper.min.js" var="popper" />
 <spring:url value="/resources/js/doce.js" var="docejs" />
 <spring:url value="/resources/js/fontawesome-all.min.js" var="fonteawesome" />
+<spring:url value="/resources/js/imgur/imgur.js" var="imgur" />
+<spring:url value="/resources/js/imgur/upload.js" var="imgur_upload" />
 
 
 <title>S.O.S Mão na Massa - ${titulo }</title>
@@ -139,8 +142,10 @@
 	<script src="${jquery}"></script>
 	<script src="${popper}"></script>
 	<script src="${bootstrapjs}"></script>
-	<script src="${docejs}"></script>
 	<script src="${fonteawesome}"></script>
+	<script src="${imgur}"></script>
+	<script src="${imgur_upload}"></script>
+	<script src="${docejs}"></script>
 </body>
 </html>
 

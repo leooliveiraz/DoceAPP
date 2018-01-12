@@ -7,10 +7,6 @@ $("#imagem_principal").on('change', function () {
  
         var reader = new FileReader();
         reader.onload = function (e) {
-            $("<img />", {
-                "src": e.target.result,
-                "class": "img_produto_cadastro thumb-image"
-            }).appendTo(image_holder);
             $("<input />", {
             	"type" : "hidden",
             	"name" : "imagem",

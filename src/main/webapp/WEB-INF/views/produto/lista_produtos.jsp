@@ -19,7 +19,7 @@
 				<tags:produtoCard descricao="${produto.descricao }" 
 					nome="${produto.nome }"  nomeUrl="${produto.nomeUrl }"
 					link="/produtos/alterar/${produto.id }" 
-					imagem="${produto.imagem }">
+					imagem="${produto.buscaFoto()}">
 				</tags:produtoCard>
 			</c:forEach>
 		</div>

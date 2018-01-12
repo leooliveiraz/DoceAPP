@@ -16,7 +16,7 @@
 				<tags:produtoCard descricao="${produto.descricao }" 
 					nome="${produto.nome }"  nomeUrl="${produto.nomeUrl }"
 					link="/cardapio/detalhes/${produto.id }" 
-					imagem="${produto.imagem }">
+					imagem="${produto.buscaFoto()}">
 				</tags:produtoCard>
 			</c:forEach>
 		</div>

@@ -20,6 +20,7 @@ public class Produto {
 	public Double valor_desconto;
 	@Lob
 	public String imagem;
+	public String link_imagem;
 	
 	@Override
 	public int hashCode() {
@@ -49,6 +50,14 @@ public class Produto {
 		String nomeUrl = nome+"";
 		nomeUrl = nomeUrl.replaceAll(" ", "+");
 		return nomeUrl;
+	}
+	
+	public String buscaFoto() {
+		if(link_imagem != null && !link_imagem.isEmpty()) {
+			return link_imagem;
+		}else {
+			return imagem;
+		}
 	}
 	
 }

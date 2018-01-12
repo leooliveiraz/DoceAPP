@@ -97,8 +97,8 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<img class="img_produto_tabela"
-							src="<c:if test="${item.produto.imagem.isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
-										<c:if test="${item.produto.imagem != null }">${item.produto.imagem }</c:if>"
+							src="<c:if test="${item.produto.buscaFoto().isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
+										<c:if test="${item.produto.buscaFoto() != null }">${item.produto.buscaFoto() }</c:if>"
 							alt="Produto"  />
 			
 					</div>

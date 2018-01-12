@@ -52,11 +52,9 @@ public class ProdutoController {
 	@RequestMapping(value="/alterar",method=RequestMethod.POST)
 	public ModelAndView alterar(Produto produto,RedirectAttributes redirectAttributes) throws IOException {
 		ModelAndView mv = new ModelAndView("redirect:/produtos/lista");			
-		System.out.println(produto.getImagem());
 		produtoService.salvar(produto);
     	redirectAttributes.addFlashAttribute("sucesso", "Produto alterado com sucesso.");
 		return mv;
-	}
-	
+	}	
 
 }

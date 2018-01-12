@@ -22,7 +22,7 @@
 		<tags:itemCarrinho item="${item }" 
 			descricao="${item.produto.descricao }"
 			id="${item.produto.id}"
-			imagem="${item.produto.imagem}"
+			imagem="${item.produto.buscaFoto()}"
 			nome="${item.produto.nome}"
 			valor="${item.produto.valor}"
 			valor_desconto="${item.produto.valor_desconto}" />

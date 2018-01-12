@@ -66,8 +66,8 @@
 
 			<c:forEach items="${produtos }" var="produto">
 				<tags:produtoCard descricao="${produto.descricao }" nomeUrl="${produto.nomeUrl}"
-					nome="${produto.nome }" link="/cardapio/detalhes/${produto.id }"
-					imagem="${produto.imagem }"></tags:produtoCard>
+					nome="${produto.nome }" link="/cardapio/detalhes/${produto.id }" 
+					imagem="${produto.buscaFoto() }"></tags:produtoCard>
 			</c:forEach>
 
 		</div>

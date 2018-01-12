@@ -17,8 +17,8 @@
 					<hr>
 					<img class="img_produto_cadastro" 
 						src	="
-							<c:if test="${item.produto.imagem.isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
-							<c:if test="${item.produto.imagem != null }">${item.produto.imagem }</c:if>"
+							<c:if test="${item.produto.buscaFoto().isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
+							<c:if test="${item.produto.buscaFoto() != null }">${item.produto.buscaFoto() }</c:if>"
 							alt="Produto" width="140" height="140" />
 					<br>
 					<br>

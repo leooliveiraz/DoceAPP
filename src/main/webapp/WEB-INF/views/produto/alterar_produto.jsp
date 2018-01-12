@@ -70,16 +70,17 @@
 						Imagem:
 					</label>
 					<div class="col-sm-10">		
-						<div id="image-holder">
+						<div id="image-holder" class="image-holder" >
 							<img class="img_produto_cadastro" 
 								src="
-									<c:if test="${produto.imagem.isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
-									<c:if test="${produto.imagem != null }">${produto.imagem }</c:if>"
+									<c:if test="${produto.buscaFoto().isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
+									<c:if test="${produto.buscaFoto() != null }">${produto.buscaFoto() }</c:if>"
 								alt="Produto" width="140" height="140">
-							<input type="hidden" id="imagem" name="imagem"	value="${produto.imagem }" />
 						</div>								
 					    
-						<input id="imagem_principal" name="imagem_principal" type="file" class="form-control"></input>
+    					<div class="dropzone">
+    						<div class="info"></div>
+   						</div>
 					</div>
 				</div>
 				
