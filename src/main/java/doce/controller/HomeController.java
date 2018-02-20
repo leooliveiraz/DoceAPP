@@ -34,4 +34,9 @@ public class HomeController {
 		ModelAndView mv = new ModelAndView("googleSearch");
 		return mv;
 	}
+	@RequestMapping("/manifest")
+	public ModelAndView manifest() {
+		ModelAndView mv = new ModelAndView("manifest");
+		return mv;
+	}
 }
