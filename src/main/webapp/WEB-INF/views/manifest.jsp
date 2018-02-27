@@ -1,6 +1,6 @@
 {
-  "short_name": "SOS Mao na Massa",
-  "name": "SOS Mao na Massa",
+  "short_name": "KETMEL",
+  "name": "KETMEL DOCES",
   "icons": [
     {
       "src": "/resources/img/48.png",
