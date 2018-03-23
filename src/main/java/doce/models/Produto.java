@@ -18,6 +18,7 @@ public class Produto {
 	public String descricao;
 	public Double valor;
 	public Double valor_desconto;
+	public Boolean prioridade;
 	@Lob
 	public String imagem;
 	public String link_imagem;

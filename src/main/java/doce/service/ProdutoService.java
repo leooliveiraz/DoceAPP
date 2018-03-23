@@ -19,14 +19,14 @@ public class ProdutoService {
 	}
 
 	public List<Produto> listar() {
-		Iterable<Produto> lista =produtoRepository.findAll();
+		Iterable<Produto> lista =produtoRepository.findByNomeContainingOrderByPrioridadeDescNomeAsc("%");
 		List<Produto> produtos = new ArrayList<Produto>();
 		lista.forEach(produto -> produtos.add(produto));
 		return  produtos;
 	}
 	public List<Produto> listarNome(String nome) {
 		nome="%"+nome+"%";
-		Iterable<Produto> lista =produtoRepository.findByNomeContaining(nome);
+		Iterable<Produto> lista =produtoRepository.findByNomeContainingOrderByPrioridadeDescNomeAsc(nome);
 		List<Produto> produtos = new ArrayList<Produto>();
 		lista.forEach(produto -> produtos.add(produto));
 		return  produtos;

@@ -65,12 +65,26 @@
 							placeholder="Valor com desconto" value="${produto.valor_desconto }">
 					</div>
 				</div>
+				
+				<div class="form-group row">
+					<label for="prioridade" class="col-sm-2 col-form-label">
+						É Prioridade:
+					</label>
+					<div class="col-sm-10">
+						<select class="custom-select" name="prioridade">
+						  <option value="0">Não</option>
+						  <option value="1" ${produto.prioridade == true ? 'selected' :'' }>Sim</option>
+						</select>
+					</div>
+				</div>
+				
 				<div class="form-group row">
 					<label for="imagem" class="col-sm-2 col-form-label">
 						Imagem:
 					</label>
 					<div class="col-sm-10">		
 						<div id="image-holder" class="image-holder" >
+						<input type="hidden" name="imagem" id="imagem" value="${produto.imagem }" >
 							<img class="img_produto_cadastro" 
 								src="
 									<c:if test="${produto.buscaFoto().isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>

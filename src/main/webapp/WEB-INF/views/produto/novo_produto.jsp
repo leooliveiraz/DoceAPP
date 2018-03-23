@@ -52,6 +52,19 @@
 							placeholder="Valor com desconto">
 					</div>
 				</div>
+				
+				<div class="form-group row">
+					<label for="prioridade" class="col-sm-2 col-form-label">
+						É Prioridade:
+					</label>
+					<div class="col-sm-10">
+						<select class="custom-select" name="prioridade">
+						  <option value="0">Não</option>
+						  <option value="1">Sim</option>
+						</select>
+					</div>
+				</div>
+				
 				<div class="form-group row">
 					<label for="imagem" class="col-sm-2 col-form-label">
 						Imagem:
