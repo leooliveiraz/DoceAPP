@@ -3,7 +3,6 @@ package doce.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -19,8 +18,6 @@ public class Produto {
 	public Double valor;
 	public Double valor_desconto;
 	public Boolean prioridade;
-	@Lob
-	public String imagem;
 	public String link_imagem;
 	
 	@Override
@@ -57,7 +54,7 @@ public class Produto {
 		if(link_imagem != null && !link_imagem.isEmpty()) {
 			return link_imagem;
 		}else {
-			return imagem;
+			return "";
 		}
 	}
 	

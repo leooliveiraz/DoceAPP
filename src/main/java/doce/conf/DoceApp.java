@@ -22,10 +22,6 @@ import doce.service.ProdutoService;
 public class DoceApp {
 	public static void main(String []args) {
 		SpringApplication.run(DoceApp.class,args);
-		String ambiente = System.getenv().get("AMBIENTE");
-		if(ambiente!=null && ambiente.equals("PRODUCAO")) {
-			System.out.println(ambiente);
-		}
 	}
 	
 	@Bean

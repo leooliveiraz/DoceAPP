@@ -5,7 +5,6 @@
         document.querySelector('.status').innerHTML = 
             '<br><input type="hidden" id="link_imagem" name="link_imagem" class="img_produto_cadastro thumb-image" value=' + wahaha + '/>' 
             + '<img class="img_produto_cadastro" src=' + wahaha + '/>';
-
      }
  };
 

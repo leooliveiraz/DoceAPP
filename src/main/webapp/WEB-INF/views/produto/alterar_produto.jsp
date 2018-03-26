@@ -84,7 +84,7 @@
 					</label>
 					<div class="col-sm-10">		
 						<div id="image-holder" class="image-holder" >
-						<input type="hidden" name="imagem" id="imagem" value="${produto.imagem }" >
+						<input type="hidden" name="link_imagem" id="link_imagem" value="${produto.link_imagem }" >
 							<img class="img_produto_cadastro" 
 								src="
 									<c:if test="${produto.buscaFoto().isEmpty() }">data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==</c:if>
